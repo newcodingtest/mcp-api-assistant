@@ -1,0 +1,5 @@
+rootProject.name = 'demo'
+
+include 'mcp-client'
+include 'mcp-server'
+include 'swagger-service'
