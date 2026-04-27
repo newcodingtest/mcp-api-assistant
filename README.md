@@ -91,5 +91,5 @@ test1 서비스의 OpenAPI 명세서를 조회한 결과, 핵심 엔드포인트
 - Spring Boot
 - Spring AI
 - MCP (Model Context Protocol)
-- Ollama (Local LLM)
+- Ollama Qwen3.5:9b (Local LLM)
 - OpenAPI / Swagger
