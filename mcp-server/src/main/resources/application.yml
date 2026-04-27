@@ -1,3 +1,5 @@
+server:
+  port: 8083
 spring:
 
   application:
@@ -23,7 +25,12 @@ spring:
       services:
         - name: test1
           description: 테스트 서비스1
-          openapi-url: http://localhost:8081/v1/api-docs
+          openapi-url: http://localhost:8082/v1/api-docs
+          aliases:
+            - test1
+            - 테스트 서비스1
+            - 주문 서비스
+            - order service
 #        - name: test2
 #          description: 테스트 서비스2
 #          openapi-url: http://localhost:8082/v1/api-docs

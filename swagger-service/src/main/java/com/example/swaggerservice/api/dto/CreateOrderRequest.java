@@ -1,20 +1,44 @@
 package com.example.swaggerservice.api.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Schema(description = "주문 생성 요청")
 public class CreateOrderRequest {
 
-    @Schema(description = "주문자 ID", example = "user-1001")
+    @NotBlank
+    @Schema(
+            description = "주문자 ID",
+            example = "user-1001",
+            requiredMode = Schema.RequiredMode.REQUIRED
+    )
     private String userId;
 
-    @Schema(description = "상품 코드", example = "ITEM-001")
+    @NotBlank
+    @Schema(
+            description = "상품 코드",
+            example = "ITEM-001",
+            requiredMode = Schema.RequiredMode.REQUIRED
+    )
     private String productCode;
 
-    @Schema(description = "수량", example = "2")
-    private int quantity;
+    @NotNull
+    @Min(1)
+    @Schema(
+            description = "수량",
+            example = "2",
+            requiredMode = Schema.RequiredMode.REQUIRED
+    )
+    private Integer quantity;
 
-    @Schema(description = "결제 수단", example = "CARD")
+    @NotBlank
+    @Schema(
+            description = "결제 수단",
+            example = "CARD",
+            requiredMode = Schema.RequiredMode.REQUIRED
+    )
     private String paymentMethod;
 
     public String getUserId() {

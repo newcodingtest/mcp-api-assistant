@@ -1,8 +1,7 @@
 package com.example.mcpclient.controller;
 
 import com.example.demo.dto.ChatRequest;
-import com.example.demo.dto.ChatResponse;
-
+import com.example.mcpclient.dto.ChatResponse;
 import com.example.mcpclient.service.LocalAiService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,16 +16,10 @@ public class AiController {
         this.localAiService = localAiService;
     }
 
-    @PostMapping("/chat")
-    public ChatResponse chat(@RequestBody ChatRequest request) {
-        String answer = localAiService.askMistral(request.getMessage());
-        return new ChatResponse(answer);
-    }
-
     @PostMapping("/swagger")
     public ChatResponse ask(@RequestBody ChatRequest request) {
-        System.out.println(request.getMessage());
-        String answer = localAiService.askMistral(request.getMessage());
+        System.out.println("request = " + request);
+        String answer = localAiService.ask(request.getMessage());
         System.out.println("answer = " + answer);
         return new ChatResponse(answer);
     }

@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 
 spring:
   application:
@@ -8,5 +8,6 @@ spring:
 springdoc:
   api-docs:
     path: /v1/api-docs
+
   swagger-ui:
     path: /swagger-ui.html

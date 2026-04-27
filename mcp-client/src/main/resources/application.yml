@@ -14,9 +14,9 @@ spring:
           include: false
       chat:
         embedding: none
-        model: mistral:7b # mistral:7b, qwen3-5:9b
+        model: qwen3.5:9b # mistral:7b, qwen3.5:9b
         options:
-          temperature: 0.1
+          temperature: 0.1 #
           keep-alive: 30m
 
     mcp:
@@ -33,7 +33,7 @@ spring:
         streamable-http:
           connections:
             swagger-server:
-              url: http://localhost:8080
+              url: http://localhost:8083
               endpoint: /mcp
 
 
